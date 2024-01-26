@@ -2,67 +2,63 @@ package ru.netology.stats;
 
 public class StatsService {
     int getSum(int[] stats) {
-        int s = 0;
-        for (int curr : stats)
-            s += curr;
+        int sum = 0;
+        for (int curr : stats) {
+            sum += curr;
+        }
 
-        return s;
+        return sum;
     }
 
     double getAvg(int[] stats) {
-        double s = 0;
-        for (int curr : stats)
-            s += curr;
-
-        return s / stats.length;
+        return (double) getSum(stats) / stats.length;
     }
 
     int getLastMaxMonth(int[] stats) {
         int max = 0;
-        for (int i = 1; i < stats.length; ++i)
-            if (stats[i] >= stats[max])
+        for (int i = 1; i < stats.length; ++i) {
+            if (stats[i] >= stats[max]) {
                 max = i;
+            }
+        }
 
         return max + 1;
     }
 
     int getLastMinMonth(int[] stats) {
         int min = 0;
-        for (int i = 1; i < stats.length; ++i)
-            if (stats[i] <= stats[min])
+        for (int i = 1; i < stats.length; ++i) {
+            if (stats[i] <= stats[min]) {
                 min = i;
+            }
+        }
 
         return min + 1;
     }
 
     int getCountBelowAvg(int[] stats) {
-        double s = 0;
-        for (int curr : stats)
-            s += curr;
-
-        double avg = s / stats.length;
+        double average = getAvg(stats);
 
         int count = 0;
-        for (int curr : stats)
-            if (curr < avg)
+        for (int curr : stats) {
+            if (curr < average) {
                 ++count;
+            }
+        }
 
         return count;
     }
 
     int getCountAboveAvg(int[] stats) {
-        double s = 0;
-        for (int curr : stats)
-            s += curr;
-
-        double avg = s / stats.length;
+        double average = getAvg(stats);
 
         int count = 0;
-        for (int curr : stats)
-            if (curr > avg)
+        for (int curr : stats) {
+            if (curr > average) {
                 ++count;
+            }
+        }
 
         return count;
     }
-
 }
