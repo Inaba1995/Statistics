@@ -1,20 +1,20 @@
 package ru.netology.stats;
 
 public class StatsService {
-    int getSum(int[] stats) {
-        int sum = 0;
-        for (int curr : stats) {
+    long getSum(long[] stats) {
+        long sum = 0;
+        for (long curr : stats) {
             sum += curr;
         }
 
         return sum;
     }
 
-    double getAvg(int[] stats) {
+    double getAvg(long[] stats) {
         return (double) getSum(stats) / stats.length;
     }
 
-    int getLastMaxMonth(int[] stats) {
+    int getLastMaxMonth(long[] stats) {
         int max = 0;
         for (int i = 1; i < stats.length; ++i) {
             if (stats[i] >= stats[max]) {
@@ -25,7 +25,7 @@ public class StatsService {
         return max + 1;
     }
 
-    int getLastMinMonth(int[] stats) {
+    int getLastMinMonth(long[] stats) {
         int min = 0;
         for (int i = 1; i < stats.length; ++i) {
             if (stats[i] <= stats[min]) {
@@ -36,11 +36,11 @@ public class StatsService {
         return min + 1;
     }
 
-    int getCountBelowAvg(int[] stats) {
+    int getCountBelowAvg(long[] stats) {
         double average = getAvg(stats);
 
         int count = 0;
-        for (int curr : stats) {
+        for (long curr : stats) {
             if (curr < average) {
                 ++count;
             }
@@ -49,11 +49,11 @@ public class StatsService {
         return count;
     }
 
-    int getCountAboveAvg(int[] stats) {
+    int getCountAboveAvg(long[] stats) {
         double average = getAvg(stats);
 
         int count = 0;
-        for (int curr : stats) {
+        for (long curr : stats) {
             if (curr > average) {
                 ++count;
             }

@@ -6,17 +6,17 @@ import org.junit.jupiter.api.Test;
 public class StatsServiceTest {
     @Test
     void shouldCalculateSum() {
-        int[] stats = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] stats = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService service = new StatsService();
-        int expectedSum = 180;
-        int actualSum = service.getSum(stats);
+        long expectedSum = 180;
+        long actualSum = service.getSum(stats);
 
         Assertions.assertEquals(expectedSum, actualSum);
     }
 
     @Test
     void shouldCalculateAvg() {
-        int[] stats = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] stats = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService service = new StatsService();
         double expectedAvg = 15;
         double actualAvg = service.getAvg(stats);
@@ -26,7 +26,7 @@ public class StatsServiceTest {
 
     @Test
     void shouldCalculateLastMaxMonth() {
-        int[] stats = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] stats = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService service = new StatsService();
         int expectedMonth = 8;
         int actualMonth = service.getLastMaxMonth(stats);
@@ -36,7 +36,7 @@ public class StatsServiceTest {
 
     @Test
     void shouldCalculateLastMinMonth() {
-        int[] stats = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] stats = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService service = new StatsService();
         int expectedMonth = 9;
         int actualMonth = service.getLastMinMonth(stats);
@@ -46,7 +46,7 @@ public class StatsServiceTest {
 
     @Test
     void shouldCalculateCountBelowAvg() {
-        int[] stats = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] stats = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService service = new StatsService();
         int expectedCount = 5;
         int actualCount = service.getCountBelowAvg(stats);
@@ -56,7 +56,7 @@ public class StatsServiceTest {
 
     @Test
     void shouldCalculateCountAboveAvg() {
-        int[] stats = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] stats = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService service = new StatsService();
         int expectedCount = 5;
         int actualCount = service.getCountAboveAvg(stats);
